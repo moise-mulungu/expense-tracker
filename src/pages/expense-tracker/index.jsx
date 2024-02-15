@@ -73,6 +73,7 @@ export const ExpenseTracker = () => {
 }
 // Path: src/pages/expense-tracker/index.jsx
 
+// DM: todoMM: put this into a .md file in new dir ./setup and provide a link or ai prompt as the source
 /*
 Steps to create a firebase database and connect it to the application code: 
 1. Create the basic structure of the Expense Tracker page. The page should have the following elements:
