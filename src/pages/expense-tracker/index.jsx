@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useAddTransaction } from '../../hooks/use-add-transactions'
+import { useGetTransactions } from '../../hooks/use-get-transactions'
 export const ExpenseTracker = () => {
-  const [transactionAmount, setTransactionAmount] = useState([])
+  const [transactionAmount, setTransactionAmount] = useState(0)
   const [description, setDescription] = useState('')
   // const [amount, setAmount] = useState('')
   const [transactionType, setTransactionType] = useState('expense')
   const { addTransaction } = useAddTransaction()
+  const { transactions } = useGetTransactions()
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -18,16 +20,16 @@ export const ExpenseTracker = () => {
           <h1>Expense Tracker</h1>
           <div className="balance">
             <h3>Your Balance</h3>
-            <h1>$260.00</h1>
+            <h1>$0.00</h1>
           </div>
           <div className="income-expense">
             <div className="income">
               <h3>Income</h3>
-              <p>$500.00</p>
+              <p>$00.00</p>
             </div>
             <div className="expense">
               <h3>Expense</h3>
-              <p>$240.00</p>
+              <p>$0.00</p>
             </div>
           </div>
           <form className="add-transaction" onSubmit={onSubmit}>
@@ -67,6 +69,19 @@ export const ExpenseTracker = () => {
       </div>
       <div className="transactions">
         <h3>Transactions</h3>
+        <ul>
+          {transactions.map((transaction) => {
+            const { id, description, transactionAmount, transactionType } = transaction
+            return (
+              <li key={id}>
+                <h4>{description}</h4>
+                <p>
+                  ${transactionAmount} . <label>{transactionType}</label>
+                </p>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </>
   )

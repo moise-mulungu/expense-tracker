@@ -1,4 +1,4 @@
-import { addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '../config/firebase-config'
 import { useGetUserInfo } from './use-get-user-info'
 
@@ -23,6 +23,7 @@ export const useAddTransaction = () => {
       description,
       amount: transactionAmount,
       type: transactionType,
+      createdAt: serverTimestamp(), // Add this line
     })
   }
 
