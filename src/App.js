@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Auth />} />
           <Route path="/expense-tracker" element={<ExpenseTracker />} />
-          {/* DM: todoMM: take 15 minutes to look at nextjs documentation page on "routing: custom errors" and explain in the main (myPortfolio) repo how to create a route in nextjs that does the same thing as <Route path="*" element={<h1>Page Not Found</h1>} />. Add a simple "page not found" route to your myPortfolio repo. Put this in a separate commit and dont work more than 15 minutes on it. */}
+          {/* (done)DM: todoMM: take 15 minutes to look at nextjs documentation page on "routing: custom errors" and explain in the main (myPortfolio) repo how to create a route in nextjs that does the same thing as <Route path="*" element={<h1>Page Not Found</h1>} />. Add a simple "page not found" route to your myPortfolio repo. Put this in a separate commit and don't work more than 15 minutes on it. */}
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </Router>
