@@ -4,7 +4,7 @@ import { useGetUserInfo } from './use-get-user-info'
 
 /* 
 
-DM: todoMM: for ALL the hooks in this directory, I want you to add a usage like this::
+(done)DM: todoMM: for ALL the hooks in this directory, I want you to add a usage like this::
 
 usage:
 
