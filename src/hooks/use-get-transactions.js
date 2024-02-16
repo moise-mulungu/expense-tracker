@@ -14,6 +14,7 @@ import { useDeleteTransaction } from './hooks/use-delete-transaction'
 const { deleteTransaction } = useDeleteTransaction()
 deleteTransaction(transactionId)
 
+DM: todoMM: good, but useUpdateTransaction and useDeleteTransaction don't exist. If you plan to make those hooks, great, then create .js files for each of them and put the usage there; you can write the code later. When the reader sees usage for functions that do not exist, it is confusing to the reader.
 // For useUpdateTransaction hook
 import { useUpdateTransaction } from './hooks/use-update-transaction'
 const { updateTransaction } = useUpdateTransaction()
@@ -92,4 +93,5 @@ to solve that error, i created the index in the firebase console by:
   12. clicking on the "save" button that appears on the popup on the firebase console.
   13. I then ran the app again and the error was gone.
 
+  DM: good
 */

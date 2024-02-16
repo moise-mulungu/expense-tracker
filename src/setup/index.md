@@ -43,4 +43,5 @@ Steps to create a firebase database and connect it to the application code:
 9. in order to get the data from the form input, i created three states; description with a string as default value, transactionAmount with 0 as a default value, and transactionType with "expense" as default value.
 10. tested the code on the browser and on the firebase console, so it worked.
 
+DM: good that lots of detail!
 */
