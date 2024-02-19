@@ -138,4 +138,5 @@ To fix the transaction amount and the transaction type, i did the following:
   9. Proposing a Solution: To fix this, I tried changing transactionAmount to amount and transactionType to type when destructuring the transaction object in the ExpenseTracker component. that fixed the issue.
 
   But i was curious to know why the transactionAmount and transactionType were not showing up on the browser. i asked AI "what the purpose of amount: transactionAmount and type: transactionType in the object being passed to the addDoc function in the useAddTransaction hook?", AI answer: "The purpose of amount: transactionAmount and type: transactionType in the object being passed to the addDoc function in the useAddTransaction hook is to set the amount and type fields of the new Firestore document to the values of transactionAmount and transactionType, respectively."
+  
 */
