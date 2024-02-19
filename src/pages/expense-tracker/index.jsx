@@ -1,22 +1,41 @@
 import React, { useState } from 'react'
+import { auth } from '../../config/firebase-config'
+import { signOut } from 'firebase/auth'
 import { useAddTransaction } from '../../hooks/use-add-transactions'
 import { useGetTransactions } from '../../hooks/use-get-transactions'
+import { useGetUserInfo } from '../../hooks/use-get-user-info'
+import { useNavigate } from 'react-router-dom'
+
 export const ExpenseTracker = () => {
   const [transactionAmount, setTransactionAmount] = useState(0)
   const [description, setDescription] = useState('')
   const [transactionType, setTransactionType] = useState('expense')
+
   const { addTransaction } = useAddTransaction()
   const { transactions } = useGetTransactions()
+  const { name, profilePhoto } = useGetUserInfo()
+
+  const navigate = useNavigate()
 
   const onSubmit = (e) => {
     e.preventDefault()
     addTransaction({ description, transactionAmount, transactionType })
   }
+
+  const signUserOut = async () => {
+    try {
+      await signOut(auth)
+      localStorage.clear()
+      navigate('/')
+    } catch (error) {
+      console.log('error signing out', error)
+    }
+  }
   return (
     <>
       <div className="expense-tracker">
         <div className="container">
-          <h1>Expense Tracker</h1>
+          <h1>{name}'s Expense Tracker</h1>
           <div className="balance">
             <h3>Your Balance</h3>
             <h1>$0.00</h1>
@@ -65,6 +84,12 @@ export const ExpenseTracker = () => {
             <button type="submit">Add Transaction</button>
           </form>
         </div>
+        {profilePhoto && (
+          <div>
+            <img src={profilePhoto} alt={name} />
+            <button onClick={signUserOut}>Sign out</button>
+          </div>
+        )}
       </div>
       <div className="transactions">
         <h3>Transactions</h3>
