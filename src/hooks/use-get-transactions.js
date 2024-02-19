@@ -27,6 +27,9 @@ export const useGetTransactions = () => {
   const { userID } = useGetUserInfo()
 
   // Get all transactions for the user
+  /*
+  howtofirebase:: real-time-update: how to listen for real-time updates in your firebase;** import the necessary Firebase Firestore functions and your Firebase instance, create a query for the Firestore collection you want to listen to, use the onSnapshot function to listen for real-time updates in your Firestore collection,then when you no longer need the snapshot, you can unsubscribe from it.
+  */
   const getTransactions = useCallback(async () => {
     let unsubscribe
     try {
