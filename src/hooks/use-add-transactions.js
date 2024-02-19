@@ -18,13 +18,17 @@ export const useAddTransaction = () => {
   const transactionsCollectionRef = collection(db, 'transactions')
   const { userID } = useGetUserInfo()
   const addTransaction = async ({ description, transactionAmount, transactionType }) => {
-    await addDoc(transactionsCollectionRef, {
-      userID,
-      description,
-      amount: transactionAmount,
-      type: transactionType,
-      createdAt: serverTimestamp(), // Add this line
-    })
+    await addDoc(
+      transactionsCollectionRef,
+      {
+        userID,
+        description,
+        amount: transactionAmount,
+        type: transactionType,
+        createdAt: serverTimestamp(), // Add this line
+      },
+      console.log('transaction amount: ', typeof transactionAmount) //DM: todoMM: the type of transactionAmount is string, but it should be number
+    )
   }
 
   return {
