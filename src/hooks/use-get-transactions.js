@@ -9,7 +9,6 @@ import { useGetUserInfo } from '../hooks/use-get-user-info'
 
 /*
 
-(done)DM: todoMM: good, but useUpdateTransaction and useDeleteTransaction don't exist. If you plan to make those hooks, great, then create .js files for each of them and put the usage there; you can write the code later. When the reader sees usage for functions that do not exist, it is confusing to the reader.
 
 
 // For useGetTransaction hook
