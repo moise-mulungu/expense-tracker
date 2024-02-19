@@ -4,20 +4,23 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 //(done) DM: did the tutorial recommend putting all of these in the .env file, or just the apiKey? usually you put only secrets in the .env file, but these don't all look like sensitive data, but I'm not sure. MM: No, the tutorial didn't mention to put them in an .env file, it only says it's a matter of choice. I did that on my own.
-// DM: todoMM: OK, the look at your descriptions below and decide which are really secrets and which are not. Those that are not are useless without knowing the secrets, so they can be public. Those that are secrets should be in the .env file.
+//(done) DM: todoMM: OK, the look at your descriptions below and decide which are really secrets and which are not. Those that are not are useless without knowing the secrets, so they can be public. Those that are secrets should be in the .env file.
 const firebaseConfig = {
   //(done) DM: document what each of these are for
   // The API key is used to authenticate requests from your app, like a secret password for your Firebase project.
   apiKey: process.env.REACT_APP_API_KEY,
 
   // The Auth domain is the domain for the Firebase project. It's used for authentication.
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  authDomain: "expense-tracker-486e9.firebaseapp.com",
+  // process.env.REACT_APP_AUTH_DOMAIN,
 
   // The Project ID is a unique, user-assigned ID that can be used by Google APIs.
-  projectId: process.env.REACT_APP_PROJECT_ID,
+  projectId: "expense-tracker-486e9",
+  // process.env.REACT_APP_PROJECT_ID,
 
   // The Storage Bucket is the Google Cloud Storage bucket for the Firebase project.
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  storageBucket: "expense-tracker-486e9.appspot.com",
+  // process.env.REACT_APP_STORAGE_BUCKET,
 
   // The Messaging Sender ID is used for sending messages and notifications.
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
