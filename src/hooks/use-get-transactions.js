@@ -8,17 +8,9 @@ import { useGetUserInfo } from '../hooks/use-get-user-info'
 //MM: I anticipated the usage of this custom hook in the future, so I created it in advance.
 
 /*
-usage:
-// For useDeleteTransaction hook
-import { useDeleteTransaction } from './hooks/use-delete-transaction'
-const { deleteTransaction } = useDeleteTransaction()
-deleteTransaction(transactionId)
 
-DM: todoMM: good, but useUpdateTransaction and useDeleteTransaction don't exist. If you plan to make those hooks, great, then create .js files for each of them and put the usage there; you can write the code later. When the reader sees usage for functions that do not exist, it is confusing to the reader.
-// For useUpdateTransaction hook
-import { useUpdateTransaction } from './hooks/use-update-transaction'
-const { updateTransaction } = useUpdateTransaction()
-updateTransaction(transactionId, { description, transactionAmount, transactionType })
+(done)DM: todoMM: good, but useUpdateTransaction and useDeleteTransaction don't exist. If you plan to make those hooks, great, then create .js files for each of them and put the usage there; you can write the code later. When the reader sees usage for functions that do not exist, it is confusing to the reader.
+
 
 // For useGetTransaction hook
 import { useGetTransaction } from './hooks/use-get-transaction'
