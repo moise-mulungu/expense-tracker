@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,94 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* CSS */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-with-google-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4285f4;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.expense-tracker {
+  padding: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-transaction input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-transaction button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4285f4;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.transactions {
+  flex: 1;
+}
+
+.transactions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transactions li {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.sign-out-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4285f4;
+  color: white;
+  cursor: pointer;
 }

@@ -19,6 +19,11 @@ getTransaction(transactionId)
 
 export const useGetTransactions = () => {
   const [transactions, setTransactions] = useState([])
+  const [transactionTotals, setTransactionTotals] = useState({
+    balance: 0.0,
+    income: 0.0,
+    expenses: 0.0,
+  })
 
   // Reference to the 'transactions' collection in Firestore
 
@@ -42,14 +47,29 @@ export const useGetTransactions = () => {
       // Subscribe to the query
       unsubscribe = onSnapshot(queryTransactions, (snapshot) => {
         let docs = []
+
+        let totalIncome = 0
+        let totalExpenses = 0
+
         snapshot.forEach((doc) => {
           const data = doc.data()
           const id = doc.id
           // Add the id to the data object
           docs.push({ ...data, id })
+
+          console.log('transaction Number:', Number(data.amount))
+          if (data.type === 'expense') {
+            totalExpenses += Number(data.amount)
+          } else {
+            totalIncome += Number(data.amount)
+          }
         })
+
         // update the state with the transactions
         setTransactions(docs)
+
+        const balance = totalIncome - totalExpenses
+        setTransactionTotals({ balance, expenses: totalExpenses, income: totalIncome })
       })
     } catch (error) {
       console.log(error)
@@ -64,7 +84,7 @@ export const useGetTransactions = () => {
   }, [getTransactions])
 
   // Return the transactions and the getTransactions function
-  return { transactions, getTransactions }
+  return { transactions, transactionTotals }
 }
 
 /*
