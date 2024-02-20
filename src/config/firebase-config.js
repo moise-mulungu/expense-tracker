@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 //(done) DM: did the tutorial recommend putting all of these in the .env file, or just the apiKey? usually you put only secrets in the .env file, but these don't all look like sensitive data, but I'm not sure. MM: No, the tutorial didn't mention to put them in an .env file, it only says it's a matter of choice. I did that on my own.
-//(done) DM: todoMM: OK, the look at your descriptions below and decide which are really secrets and which are not. Those that are not are useless without knowing the secrets, so they can be public. Those that are secrets should be in the .env file.
+//(done) DM: OK, the look at your descriptions below and decide which are really secrets and which are not. Those that are not are useless without knowing the secrets, so they can be public. Those that are secrets should be in the .env file.
 const firebaseConfig = {
   //(done) DM: document what each of these are for
   // The API key is used to authenticate requests from your app, like a secret password for your Firebase project.

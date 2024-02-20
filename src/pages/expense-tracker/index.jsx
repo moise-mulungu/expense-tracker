@@ -98,7 +98,9 @@ export const ExpenseTracker = () => {
         {profilePhoto && (
           <div className="profile-section">
             <img className="profile-photo" src={profilePhoto} alt={name} />
-            <button className="sign-out-btn" onClick={signUserOut}>Sign out</button>
+            <button className="sign-out-btn" onClick={signUserOut}>
+              Sign out
+            </button>
           </div>
         )}
       </div>
@@ -124,8 +126,6 @@ export const ExpenseTracker = () => {
   )
 }
 // Path: src/pages/expense-tracker/index.jsx
-
-//(done) DM: todoMM: put this into a .md file in new dir ./setup and provide a link or ai prompt as the source
 
 /*
 To fix the transaction amount and the transaction type, i did the following:
