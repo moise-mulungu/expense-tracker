@@ -27,8 +27,8 @@ export const useAddTransaction = () => {
         type: transactionType,
         createdAt: serverTimestamp(), // Add this line
       },
-      // DM: todoMM: the type of transactionAmount is string, but it should be number DM: bump, what is this?
-      console.log('transaction amount: ', typeof transactionAmount) 
+      // DM: bump, what is this? MM: this comment was not supposed to be here.
+      console.log('transaction Amount: ', typeof transactionAmount)
     )
   }
 
