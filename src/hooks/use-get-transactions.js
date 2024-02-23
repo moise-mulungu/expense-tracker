@@ -46,7 +46,7 @@ export const useGetTransactions = () => {
       )
       // Subscribe to the query
       unsubscribe = onSnapshot(queryTransactions, (snapshot) => {
-        let docs = []
+        const docs = [] // Array to hold the transactions
 
         let totalIncome = 0
         let totalExpenses = 0
